@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boobs Touch</title>
+    <style> 
+        #right-boobs { 
+            position: relative;
+
+            cursor: pointer;
+            transition: all 1s;
+        }
+        #left-boobs { 
+            position: relative;
+
+            cursor: pointer;
+            transition: all 1s;
+        }
+        #status { 
+            font-size: 20px;
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div> 
+        <img src="./boobs-up.jpg" alt="boob up">
+    </div>   
+    <div> 
+        <img src="./boobs-left.jpg" alt="boob left" id="left-boobs"class="boobs">
+        <img src="./boobs-right.jpg" alt="boob right" id="right-boobs"class="boobs">
+    </div>
+    <div> 
+        <img src="./boobs-down.jpg" alt="boob down"> 
+    </div>
+    <span id="status"> Veu nam bat dong</span>
+</body>
+<script> 
+    function playSound() { 
+        const audio = new Audio('boob.mp3');
+        audio.play();
+    }
+    const rightBoobs = document.querySelector('#right-boobs');
+    const leftBoobs = document.querySelector('#left-boobs');
+    const status = document.querySelector('#status');
+    rightBoobs.onclick = () => { 
+        playSound();
+        rightBoobs.style.top = '-50px'
+        setTimeout(() => {
+            rightBoobs.style.top = '-10px';
+        },1000);
+    }
+    leftBoobs.onclick = () => { 
+        playSound();
+        leftBoobs.style.top = '-50px'
+        setTimeout(() => {
+            leftBoobs.style.top = '-10px';
+        },1000);
+    }
+    rightBoobs.onmouseover = () => { 
+        rightBoobs.style.width = '400px'; 
+        status.innerText = "Touched the boob";
+    }
+    rightBoobs.onmouseleave = () => { 
+        rightBoobs.style.width = '310px';
+        status.innerText = "Hand out";
+    }
+    leftBoobs.onmouseover = () => { 
+        leftBoobs.style.width = '450px'; 
+        status.innerText = "Touched the boob";
+    }
+    leftBoobs.onmouseleave = () => { 
+        leftBoobs.style.width = '420px';
+        status.innerText = "Hand out";
+    }
+</script>
+</html>
